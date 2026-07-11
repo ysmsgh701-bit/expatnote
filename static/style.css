@@ -1,0 +1,101 @@
+:root{
+  --primary:#1a5276; --accent:#e67e22; --text:#1f2933; --muted:#6b7280;
+  --bg:#ffffff; --soft:#f5f7fa; --line:#e5e9ef; --maxw:720px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--text); background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.75; font-size:17px; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%; height:auto}
+
+/* 헤더 */
+.site-header{border-bottom:1px solid var(--line); background:var(--bg); position:sticky; top:0; z-index:10}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:58px; flex-wrap:wrap}
+.brand{font-weight:800; font-size:20px; color:var(--primary)}
+.brand:hover{text-decoration:none}
+.site-nav{display:flex; gap:14px; flex-wrap:wrap}
+.site-nav a{color:var(--text); font-size:15px}
+.site-nav a.active{color:var(--primary); font-weight:700}
+
+/* 본문 공통 */
+main.wrap{padding-top:28px; padding-bottom:48px}
+h1{font-size:29px; line-height:1.35; margin:.2em 0 .5em; letter-spacing:-.01em}
+h2{font-size:22px; margin:1.8em 0 .6em; padding-top:.2em; letter-spacing:-.01em}
+h3{font-size:18.5px; margin:1.4em 0 .5em}
+p{margin:.9em 0}
+ul,ol{margin:.9em 0; padding-left:1.4em}
+li{margin:.35em 0}
+hr{border:none; border-top:1px solid var(--line); margin:2em 0}
+strong{font-weight:700}
+
+/* 빵부스러기 / 메타 */
+.breadcrumb{font-size:13.5px; color:var(--muted); margin-bottom:6px}
+.breadcrumb a{color:var(--muted)}
+.post-meta{color:var(--muted); font-size:14px; margin:0 0 18px; display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+.meta-country{background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:1px 10px; font-size:12.5px}
+
+/* 인용 / 면책 / 저자 박스 */
+blockquote{margin:1.2em 0; padding:.6em 1em; border-left:4px solid var(--accent); background:var(--soft); color:#374151; border-radius:0 6px 6px 0}
+blockquote p{margin:.3em 0}
+.disclaimer{margin:1.6em 0; padding:.9em 1em; background:#fff8f1; border:1px solid #f3d9bf; border-radius:8px; font-size:14.5px; color:#7c4a12}
+.author-box{margin:2em 0 0; padding:1.1em 1.2em; background:var(--soft); border:1px solid var(--line); border-radius:10px}
+.author-box strong{display:block; margin-bottom:.35em; color:var(--primary)}
+.author-box p{margin:0; font-size:14.5px; color:#374151}
+
+/* 표 */
+.table-wrap{overflow-x:auto; margin:1.2em 0; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:min(100%,520px)}
+th,td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top}
+thead th{background:var(--soft); font-weight:700; white-space:nowrap}
+
+/* 글 목록 카드 */
+.post-list{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.post-card a{display:flex; flex-direction:column; gap:5px; padding:15px 16px; border:1px solid var(--line); border-radius:10px; color:inherit; background:var(--bg); transition:border-color .15s, box-shadow .15s}
+.post-card a:hover{text-decoration:none; border-color:#c5d2df; box-shadow:0 2px 10px rgba(26,82,118,.06)}
+.card-cat{font-size:12px; color:var(--accent); font-weight:700}
+.card-title{font-size:17.5px; font-weight:700; color:var(--text); line-height:1.4}
+.card-desc{font-size:14px; color:var(--muted); line-height:1.55}
+.card-meta{display:flex; gap:10px; align-items:center; font-size:12.5px; color:var(--muted); margin-top:2px}
+.card-country{background:var(--soft); border-radius:999px; padding:0 8px}
+
+/* 홈 */
+.hero{padding:8px 0 22px; border-bottom:1px solid var(--line); margin-bottom:26px}
+.hero h1{font-size:30px; margin-bottom:.25em}
+.hero-lead{color:var(--muted); font-size:16px; margin:0}
+.cat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 0 30px}
+.cat-card{display:flex; flex-direction:column; gap:4px; padding:16px; border:1px solid var(--line); border-radius:10px; color:inherit}
+.cat-card:hover{text-decoration:none; border-color:#c5d2df; box-shadow:0 2px 10px rgba(26,82,118,.06)}
+.cat-label{font-weight:800; color:var(--primary); font-size:16.5px}
+.cat-desc{font-size:13.5px; color:var(--muted); line-height:1.5}
+.cat-count{font-size:12px; color:var(--accent); font-weight:700; margin-top:2px}
+section.featured,section.latest,section.related,section.category-head{margin:30px 0}
+section h2{font-size:19px; margin-bottom:14px}
+.feature-list .post-card a{border-color:#dbe6ef; background:linear-gradient(0deg,#fbfcfe,#fbfcfe)}
+.lead{color:var(--muted)}
+.empty{color:var(--muted)}
+
+/* 광고 슬롯 */
+.ad-slot{margin:1.8em 0; min-height:1px; text-align:center}
+
+/* 푸터 */
+.site-footer{border-top:1px solid var(--line); background:var(--soft); padding:26px 0; margin-top:40px}
+.foot-links{font-size:14px; margin:0 0 8px}
+.foot-links a{color:var(--text)}
+.foot-copy{font-size:12.5px; color:var(--muted); margin:0; line-height:1.6}
+
+/* 404 */
+.notfound{text-align:center; padding:60px 0}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  h1{font-size:25px}
+  .cat-grid{grid-template-columns:1fr}
+  .site-header .wrap{min-height:52px}
+  .brand{font-size:18px}
+}

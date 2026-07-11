@@ -1,0 +1,24 @@
+{
+  "siteName": "주재원노트",
+  "siteUrl": "https://expatnote.com",
+  "description": "대만·멕시코·폴란드 3개국을 직접 겪은 재무 담당 주재원의 실전 가이드. 부임 준비부터 현지 정착, 세금·환율까지.",
+  "author": "주재원 W",
+  "authorBio": "대만·멕시코·폴란드 3개국에서 근무한 재무 담당 주재원. 해외 제조법인에서 재무·세무·자금·인사·총무를 단독으로 총괄했고, 현재는 유럽 법인 경영관리 팀장으로 폴란드에 거주 중입니다. 경영학·MBA 배경의 재무 전문가(총경력 13년)로, 부임 준비부터 정착·세금·환율까지 세 번의 해외 이주를 직접 겪은 경험을 기록합니다.",
+  "email": "sgh701@naver.com",
+  "locale": "ko_KR",
+  "colors": { "primary": "#1a5276", "accent": "#e67e22", "bg": "#ffffff", "text": "#1f2933", "muted": "#6b7280" },
+  "menu": [
+    { "label": "부임 전 준비", "path": "/before/" },
+    { "label": "현지 정착", "path": "/settle/" },
+    { "label": "돈·세금", "path": "/money/" },
+    { "label": "가족·생활", "path": "/family/" }
+  ],
+  "categories": {
+    "before": { "label": "부임 전 준비", "desc": "발령부터 출국까지, 순서대로 해야 할 것들" },
+    "settle": { "label": "현지 정착", "desc": "은행·통신·집·행정 — 도착 후 첫 3개월 실무" },
+    "money": { "label": "돈·세금", "desc": "재무 담당이 직접 쓰는 세금·환율·송금·자금 가이드" },
+    "family": { "label": "가족·생활", "desc": "배우자·자녀 동반과 현지 생활 적응" }
+  },
+  "analyticsId": "",
+  "adsenseClient": ""
+}

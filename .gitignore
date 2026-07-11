@@ -1,0 +1,15 @@
+# 빌드 결과물 (Cloudflare가 빌드하므로 커밋 불필요)
+dist/
+node_modules/
+
+# 개인 문서 — 절대 커밋 금지 (이력서 등)
+*.docx
+*.pdf
+*.hwp
+
+# bkit 플러그인 내부 상태 (레포와 무관)
+.bkit/
+
+# 기타
+.DS_Store
+*.log
