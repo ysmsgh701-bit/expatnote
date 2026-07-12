@@ -198,10 +198,31 @@ function homePage(config, posts) {
     </a>`;
   }).join('');
 
+  const heroSvg = `<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="세계 지도와 항로">
+  <g fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.4">
+    <circle cx="110" cy="110" r="80"/>
+    <ellipse cx="110" cy="110" rx="31" ry="80"/>
+    <ellipse cx="110" cy="110" rx="61" ry="80"/>
+    <line x1="30" y1="110" x2="190" y2="110"/>
+    <path d="M46 70 H174"/>
+    <path d="M46 150 H174"/>
+  </g>
+  <path d="M50 152 Q108 54 174 92" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.95"/>
+  <circle cx="50" cy="152" r="5.5" fill="#e67e22"/>
+  <circle cx="174" cy="92" r="5.5" fill="#ffffff"/>
+</svg>`;
   const body = `
-<section class="hero">
-  <h1>${esc(config.siteName)}</h1>
-  <p class="hero-lead">${esc(config.description)}</p>
+<section class="hero-band">
+  <div class="hero-card">
+    <span class="hero-eyebrow">대만 · 멕시코 · 폴란드 3개국 주재원 기록</span>
+    <h1>해외 주재원 부임,<br>무엇부터 준비할까요?</h1>
+    <p>${esc(config.description)}</p>
+    <div class="hero-actions">
+      <a class="hero-cta" href="/before/checklist-d90.html">부임 준비 체크리스트</a>
+      <a class="hero-link" href="/before/compare-three-countries.html">3개국 생활 비교 →</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">${heroSvg}</div>
 </section>
 <section class="cat-grid">${catCards}</section>
 ${featuredHtml}
