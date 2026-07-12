@@ -36,6 +36,13 @@ function rmrf(dir) {
   if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
 }
 
+// 오늘 날짜(한국 시간, YYYY-MM-DD). 예약 발행 기준.
+function todayKST() {
+  const now = new Date();
+  const kst = new Date(now.getTime() + 9 * 3600 * 1000);
+  return kst.toISOString().slice(0, 10);
+}
+
 function writeFile(rel, content) {
   const full = path.join(DIST, rel);
   fs.mkdirSync(path.dirname(full), { recursive: true });
@@ -234,8 +241,15 @@ function build() {
   rmrf(DIST);
   fs.mkdirSync(DIST, { recursive: true });
 
-  const posts = loadPosts();
+  const allPosts = loadPosts();
   const pages = loadPages();
+
+  // 예약 발행: front matter의 date가 오늘(KST) 이후인 글은 아직 공개하지 않는다.
+  // 미리보기로 예약 글까지 모두 보려면: PREVIEW=1 node build.js
+  const today = todayKST();
+  const preview = !!process.env.PREVIEW;
+  const posts = preview ? allPosts : allPosts.filter(p => (p.date || '') <= today);
+  const scheduledCount = allPosts.length - posts.length;
 
   // 정적 파일 복사
   const staticDir = path.join(ROOT, 'static');
@@ -281,7 +295,7 @@ function build() {
   // 404
   writeFile('404.html', T.notFoundPage(config));
 
-  console.log(`✅ 빌드 완료: 글 ${posts.length}개, 고정 ${pages.length}개, 카테고리 ${Object.keys(config.categories).length}개`);
+  console.log(`✅ 빌드 완료: 공개 글 ${posts.length}개, 예약 대기 ${scheduledCount}개, 고정 ${pages.length}개, 카테고리 ${Object.keys(config.categories).length}개`);
   console.log(`   출력: ${path.relative(ROOT, DIST)}/`);
   console.log(`   미리보기: npx serve dist`);
 }

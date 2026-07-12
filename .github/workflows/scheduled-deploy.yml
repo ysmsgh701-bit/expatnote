@@ -1,0 +1,23 @@
+name: 예약 발행 자동 배포
+
+# 매일 한국시간 00:00(UTC 15:00)에 Cloudflare 배포를 한 번 트리거한다.
+# 재배포 때 build.js가 '오늘' 기준으로 다시 돌면서, 발행일이 된 예약 글이 공개된다.
+# 수동 실행도 가능(Actions 탭 → Run workflow).
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloudflare 배포 훅 호출
+        run: |
+          if [ -z "${{ secrets.CF_DEPLOY_HOOK }}" ]; then
+            echo "CF_DEPLOY_HOOK 시크릿이 설정되지 않았습니다. GitHub 저장소 Settings → Secrets에 등록하세요."
+            exit 1
+          fi
+          curl -fsS -X POST "${{ secrets.CF_DEPLOY_HOOK }}"
+          echo "배포 트리거 완료"
