@@ -74,6 +74,8 @@ function base(config, { title, description, url, current, jsonld, bodyHtml, ogTy
 <meta property="og:site_name" content="${attr(config.siteName)}">
 <meta property="og:locale" content="${attr(config.locale || 'ko_KR')}">
 <meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 ${config.googleSiteVerification ? `<meta name="google-site-verification" content="${attr(config.googleSiteVerification)}">` : ''}
 ${config.naverSiteVerification ? `<meta name="naver-site-verification" content="${attr(config.naverSiteVerification)}">` : ''}
 <link rel="stylesheet" href="/style.css">
