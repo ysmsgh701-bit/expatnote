@@ -195,7 +195,8 @@ function loadPosts() {
       featured: data.featured === true,
       date: data.date || '',
       updated: data.updated || data.date || '',
-      url: `/${category}/${slug}.html`,
+      url: `/${category}/${slug}`,
+      outPath: `${category}/${slug}.html`,
       bodyHtml: markdown(body),
       rawBody: body,
     };
@@ -211,7 +212,8 @@ function loadPages() {
       slug,
       title: data.title || slug,
       description: data.description || config.description,
-      url: `/${slug}.html`,
+      url: `/${slug}`,
+      outPath: `${slug}.html`,
       bodyHtml: markdown(body),
     };
   });
@@ -262,12 +264,12 @@ function build() {
   // 글 페이지
   for (const post of posts) {
     const related = relatedFor(post, posts);
-    writeFile(post.url.replace(/^\//, ''), T.postPage(config, post, related));
+    writeFile(post.outPath, T.postPage(config, post, related));
   }
 
   // 고정 페이지
   for (const page of pages) {
-    writeFile(page.url.replace(/^\//, ''), T.staticPage(config, page));
+    writeFile(page.outPath, T.staticPage(config, page));
   }
 
   // 카테고리 인덱스

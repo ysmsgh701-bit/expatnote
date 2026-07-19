@@ -46,9 +46,9 @@ function footer(config) {
   return `<footer class="site-footer">
   <div class="wrap">
     <p class="foot-links">
-      <a href="/about.html">소개</a> ·
-      <a href="/privacy.html">개인정보처리방침</a> ·
-      <a href="/contact.html">연락처</a>
+      <a href="/about">소개</a> ·
+      <a href="/privacy">개인정보처리방침</a> ·
+      <a href="/contact">연락처</a>
     </p>
     <p class="foot-copy">© ${esc(year)} ${esc(config.siteName)}. 이 사이트의 정보는 저자의 실제 경험을 바탕으로 하며, 개별 사안은 전문가 확인을 권장합니다.</p>
   </div>
@@ -220,8 +220,8 @@ function homePage(config, posts) {
     <h1>해외 주재원 부임,<br>무엇부터 준비할까요?</h1>
     <p>${esc(config.description)}</p>
     <div class="hero-actions">
-      <a class="hero-cta" href="/before/checklist-d90.html">부임 준비 체크리스트</a>
-      <a class="hero-link" href="/before/compare-three-countries.html">3개국 생활 비교 →</a>
+      <a class="hero-cta" href="/before/checklist-d90">부임 준비 체크리스트</a>
+      <a class="hero-link" href="/before/compare-three-countries">3개국 생활 비교 →</a>
     </div>
   </div>
   <div class="hero-visual" aria-hidden="true">${heroSvg}</div>
