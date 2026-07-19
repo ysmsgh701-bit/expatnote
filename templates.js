@@ -226,6 +226,28 @@ function homePage(config, posts) {
   </div>
   <div class="hero-visual" aria-hidden="true">${heroSvg}</div>
 </section>
+<!-- Pitch Master 게임 배너 -->
+<a class="pm-banner" href="https://claude.ai/code/artifact/37c23348-9819-4e06-a3c5-f1c8f7324788" target="_blank" rel="noopener">
+  <span class="pm-banner__glow" aria-hidden="true"></span>
+  <span class="pm-banner__icon" aria-hidden="true">⚽</span>
+  <span class="pm-banner__text">
+    <span class="pm-banner__title">Pitch Master</span>
+    <span class="pm-banner__sub">직접 만든 축구 매니저 게임 — 구단을 맡아 시즌을 이끌어 보세요</span>
+  </span>
+  <span class="pm-banner__cta">지금 플레이 →</span>
+</a>
+<style>
+.pm-banner{display:flex;align-items:center;gap:16px;max-width:720px;margin:20px auto;padding:16px 20px;border-radius:14px;text-decoration:none;color:#e8edf7;background:linear-gradient(135deg,#12351f 0%,#0f1420 60%,#1a2233 100%);border:1px solid #2e5b3b;box-shadow:0 6px 24px rgba(0,0,0,.25);position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .15s ease;font-family:'Pretendard','Segoe UI','Malgun Gothic',system-ui,sans-serif}
+.pm-banner:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.pm-banner__glow{position:absolute;inset:0;background:radial-gradient(circle at 12% 30%,rgba(74,222,128,.18),transparent 45%);pointer-events:none}
+.pm-banner__icon{font-size:34px;line-height:1;flex:0 0 auto}
+.pm-banner__text{display:flex;flex-direction:column;gap:3px;flex:1 1 auto;min-width:0}
+.pm-banner__title{font-size:19px;font-weight:800;color:#4ade80;letter-spacing:.2px}
+.pm-banner__sub{font-size:13px;color:#8a97b1}
+.pm-banner__cta{flex:0 0 auto;background:#4ade80;color:#06210f;font-weight:800;font-size:14px;padding:10px 16px;border-radius:9px;white-space:nowrap}
+@media(max-width:560px){.pm-banner{flex-wrap:wrap;padding:14px;gap:12px}.pm-banner__sub{font-size:12px}.pm-banner__cta{width:100%;text-align:center}}
+</style>
+<!-- /Pitch Master 게임 배너 -->
 <section class="cat-grid">${catCards}</section>
 ${featuredHtml}
 ${adSlot(config, 'home')}
