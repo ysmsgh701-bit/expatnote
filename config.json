@@ -11,7 +11,8 @@
     { "label": "부임 전 준비", "path": "/before/" },
     { "label": "현지 정착", "path": "/settle/" },
     { "label": "돈·세금", "path": "/money/" },
-    { "label": "가족·생활", "path": "/family/" }
+    { "label": "가족·생활", "path": "/family/" },
+    { "label": "억울한오리", "path": "https://duck.expatnote.cloud" }
   ],
   "categories": {
     "before": { "label": "부임 전 준비", "desc": "발령부터 출국까지, 순서대로 해야 할 것들" },
